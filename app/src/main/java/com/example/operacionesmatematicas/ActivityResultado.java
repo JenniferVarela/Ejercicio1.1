@@ -16,17 +16,8 @@ public class ActivityResultado extends AppCompatActivity {
         setContentView(R.layout.activity_resultado);
 
         resultado = (TextView) findViewById(R.id.txtResultadoR);
-
-        String resultadoDiv = getIntent().getStringExtra("resultadodiv");
-        String resultadoMul = getIntent().getStringExtra("resultadoMulti");
-        String resultadoRes = getIntent().getStringExtra("resultadoresta");
-        String resultados = getIntent().getStringExtra("resultadosuma");
-
-
-        resultado.setText("La division es: " + resultadoDiv);
-        resultado.setText("La multiplicacion es: "+ resultadoMul);
-        resultado.setText("La resta es: " + resultadoRes);
-        resultado.setText("La suma es: " + resultados);
+        String resultados = getIntent().getStringExtra("resultado");
+        resultado.setText(resultados);
 
         //System.out.println();
 

@@ -10,6 +10,7 @@
         android:id="@+id/txtResultadoR"
         android:layout_width="0dp"
         android:layout_height="62dp"
+        android:inputType="numberDecimal"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

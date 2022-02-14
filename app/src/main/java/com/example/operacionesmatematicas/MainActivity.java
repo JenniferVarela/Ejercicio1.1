@@ -17,7 +17,7 @@ import com.example.operacionesmatematicas.tablas.Suma;
 public class MainActivity extends AppCompatActivity {
     EditText numero1,numero2;
 
-    //TextView resultado;
+    TextView resultado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         btnresta = (Button) findViewById(R.id.btnResta);
         btndividir = (Button) findViewById(R.id.btnDividir);
         btnmultiplicar = (Button) findViewById(R.id.btnMultiplicar);
+        //resultado = (TextView) findViewById(R.id.txtResultadoR);
         //final TextView resultado = (TextView) findViewById(R.id.txtResultado);
 
         btndividir.setOnClickListener(new View.OnClickListener() {
@@ -72,11 +73,12 @@ public class MainActivity extends AppCompatActivity {
         div = new Dividir();
 
         Intent intent = new Intent(getApplicationContext(),ActivityResultado.class);
+
         div.setNum1(Integer.valueOf(numero1.getText().toString()));
         div.setNum2(Integer.valueOf(numero2.getText().toString()));
         div.setResultado(div.getNum1()/div.getNum2());
 
-        intent.putExtra("resultadodiv",div.getResultado()+"");
+        intent.putExtra("resultado","La division es: "+div.getResultado());
 
         startActivity(intent);
     }
@@ -91,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
         multi.setNum2(Integer.valueOf(numero2.getText().toString()));
         multi.setResultado(multi.getNum1() * multi.getNum2());
 
-        intent.putExtra("resultadoMulti", multi.getResultado()+"");
+        intent.putExtra("resultado", "La multiplicacion es: "+multi.getResultado());
 
         startActivity(intent);
     }
@@ -106,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
         res.setNum2(Integer.valueOf(numero2.getText().toString()));
         res.setResultado(res.getNum1()-res.getNum2());
 
-        intent.putExtra("resultadoresta",res.getResultado()+"");
+        intent.putExtra("resultado","La reta es: "+res.getResultado());
 
         startActivity(intent);
 
@@ -123,12 +125,12 @@ public class MainActivity extends AppCompatActivity {
         sum.setNum2(Integer.valueOf(numero2.getText().toString()));
         sum.setResultado(sum.getNum1()+sum.getNum2());
 
-       // int num1 = Integer.valueOf(numero1.getText().toString());
+        //int num1 = Integer.valueOf(numero1.getText().toString());
         //int num2 = Integer.valueOf(numero2.getText().toString());
-       // int resul = num1+num2;
+        //int resul = num1+num2;
 
-       // intent.putExtra("resultadosuma",resul+"");
-         intent.putExtra("resultadosuma",sum.getResultado()+"");
+        //intent.putExtra("resultado",resul+"");
+        intent.putExtra("resultado","La suma es: "+sum.getResultado());
         startActivity(intent);
 
     }
